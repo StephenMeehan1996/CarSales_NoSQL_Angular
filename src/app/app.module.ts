@@ -7,12 +7,16 @@ import { AngularFireModule} from '@angular/fire/compat'
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
+import { CarlistComponent } from './components/carlist/carlist.component';
+import { CarComponent } from './components/car/car.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarlistComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
