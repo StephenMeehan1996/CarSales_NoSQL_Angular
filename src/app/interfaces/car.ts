@@ -1,6 +1,5 @@
-import { stringify } from "querystring";
 
-export interface Car {
+export interface ICar {
     make: string;
     model: string
     year: string;

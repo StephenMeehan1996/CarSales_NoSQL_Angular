@@ -1,1 +1,52 @@
-<p>car works!</p>
+<div class = 'container'>
+    <div class = "row border">
+        <div class = "col-4">
+           <img src="{{c}}" [style.width.px]="carImageWidth">
+        </div>
+        <div class = "col-3">
+            {{c}}
+        </div>
+        <div class = "col-3">
+            {{c}}
+        </div>
+        <div class = "col-3">
+            {{c}}
+        </div>
+        
+        <button (click) = "deleteCar('ampTNM1zZLpP7BMLeaRj')">Delete</button>
+        <button (click) = "toggleShow()" >Edit</button>
+    </div>
+</div>
+
+<div *ngIf = "isShown" class = "editForm">
+    <form class = "col-6">
+        <button (click) = "toggleShow()">&#10005;</button>
+        <div>
+           <label>Make</label>
+           <input type="text" name="make" placeholder="Enter Make" #make>
+      
+           <label>Model</label>
+           <input type="text" name="model" placeholder="Enter Model" #model>
+   
+        </div>
+        <div>
+           <label>Year</label>
+           <input type="text" name="year" placeholder="Enter Year" #year>
+   
+        </div>
+   
+        <label>Image</label>
+        <input type="text" name="imageURL" placeholder="Enter imageURL" #imageURL>
+   
+        <div class="btnDiv">
+           <button type="submit"(click)="editCar('')">Edit the Car</button>
+   
+        </div>
+   
+        
+    </form>
+   </div>
+
+
+  
+    

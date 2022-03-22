@@ -1,0 +1,17 @@
+.form{
+    padding: 3% 10%;
+    border: 2px solid black;
+    text-align: left;
+}
+.form form{
+    border: 2px solid black;
+    position: relative;
+    margin: 0 auto;
+  
+}
+.form label{
+    margin: 20px;
+}
+.btnDiv{
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+.editForm{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 45%;
+    height: 50%;
+    background-color: gray;
+    color: aliceblue;
+
+}
+
+.editForm{
+    padding: 1.5% 3%;
+    border: 2px solid black;
+    text-align: left;
+}
+.editForm form{
+    border: 2px solid black;
+    position: relative;
+    margin: 0 auto;
+  
+}
+.editForm label{
+    margin: 20px;
+}
+.btnDiv{
+    text-align: center;
+}

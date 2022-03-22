@@ -9,6 +9,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { CarlistComponent } from './components/carlist/carlist.component';
 import { CarComponent } from './components/car/car.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -16,13 +17,15 @@ import { CarComponent } from './components/car/car.component';
   declarations: [
     AppComponent,
     CarlistComponent,
+    CarlistComponent,
     CarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
 
   ],
   providers: [],
