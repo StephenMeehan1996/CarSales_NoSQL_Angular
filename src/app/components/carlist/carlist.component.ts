@@ -3,6 +3,7 @@ import { CarApiService } from 'src/app/services/car-api.service';
 import { ICar, Car } from 'src/app/interfaces/car';
 
 
+
 @Component({
   selector: 'app-carlist',
   templateUrl: './carlist.component.html',
@@ -11,7 +12,10 @@ import { ICar, Car } from 'src/app/interfaces/car';
 })
 export class CarlistComponent implements OnInit {
 
-  carsData: ICar[] | undefined;
+  carsData!: ICar[];
+
+
+
 
 
   constructor(private _carAPIService: CarApiService) { 
@@ -20,7 +24,7 @@ export class CarlistComponent implements OnInit {
 
   ngOnInit(): void {
     this._carAPIService.getCarData().subscribe(carsData =>
-      {this.carsData = carsData})
+      {this.carsData = carsData});
   }
 
   addTheCar(make:string, model:string,year:string,imageURL:string): boolean{

@@ -39,13 +39,13 @@ export class CarApiService {
 
   }
 
-  delCarData(carID : string): void{
+  delCarData(carID ?: string): void{
     this.carsDataCollection.doc(carID).delete();
 
   }
 
-  editCarData(carID : string): void{
-    this.carsDataCollection.doc(carID).update({make: "Test"});
+  editCarData(tempCar: ICar, carID ?: string): void{
+    this.carsDataCollection.doc(carID).update({make: tempCar.make, model: tempCar.model, year: tempCar.year, imageURL: tempCar.imageURL});
     
 
   }

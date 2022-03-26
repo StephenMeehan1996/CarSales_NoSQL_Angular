@@ -2,8 +2,9 @@ import { compileDeclareClassMetadata } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { ICar, Car } from 'src/app/interfaces/car';
 import { CarApiService } from 'src/app/services/car-api.service';
+import { CarlistComponent } from '../carlist/carlist.component';
 
-
+// add are you sure for delete and edit
 
 @Component({
   selector: 'app-car',
@@ -13,21 +14,29 @@ import { CarApiService } from 'src/app/services/car-api.service';
 })
 export class CarComponent implements OnInit {
 
-  @Input() c !:ICar[] | undefined;
-  
+  @Input() carsData!:ICar;
+
   carImageWidth: number = 300;
 
-  constructor(private _carAPIService: CarApiService) { }
-
-  ngOnInit(): void {
+  constructor(private _carAPIService: CarApiService) { 
+    
   }
 
-  deleteCar(carDataID: string): void{
+  ngOnInit(): void {
+    console.log('From car:::' + this.carsData);
+     
+
+  }
+
+  deleteCar(carDataID? : string): void{
 
     this._carAPIService.delCarData(carDataID);
   }
-  editCar(carDataID: string): void{
-    this._carAPIService.editCarData(carDataID);
+  editCar(make:string, model:string,year:string,imageURL:string, carDataID?: string): void{
+    let tempCar: ICar;
+    tempCar = new Car(make, model,year,imageURL);
+    this._carAPIService.editCarData(tempCar,carDataID, );
+    this.carsData.id
   }
 
   isShown: boolean = false;
@@ -39,3 +48,5 @@ export class CarComponent implements OnInit {
     }
 
 }
+
+
