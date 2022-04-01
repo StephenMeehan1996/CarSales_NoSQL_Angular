@@ -45,7 +45,7 @@ export class CarApiService {
   }
 
   editCarData(tempCar: ICar, carID ?: string): void{
-    this.carsDataCollection.doc(carID).update({make: tempCar.make, model: tempCar.model, year: tempCar.year, imageURL: tempCar.imageURL});
+    this.carsDataCollection.doc(carID).update({make: tempCar.make, model: tempCar.model, year: tempCar.year, price: tempCar.price, imageURL: tempCar.imageURL});
     
 
   }

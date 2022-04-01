@@ -14,9 +14,14 @@ import { CarlistComponent } from '../carlist/carlist.component';
 })
 export class CarComponent implements OnInit {
 
+  // add labels to edit
+  // add close button
+  // change date on firebase . 
+  
   @Input() carsData!:ICar;
 
-  carImageWidth: number = 300;
+  carImageWidth: number = 250;
+  
 
   constructor(private _carAPIService: CarApiService) { 
     
@@ -32,11 +37,13 @@ export class CarComponent implements OnInit {
 
     this._carAPIService.delCarData(carDataID);
   }
-  editCar(make:string, model:string,year:string,imageURL:string, carDataID?: string): void{
+  editCar(make:string, model:string,year:string, price: string,imageURL:string, carDataID?: string): boolean{
     let tempCar: ICar;
-    tempCar = new Car(make, model,year,imageURL);
-    this._carAPIService.editCarData(tempCar,carDataID, );
-    this.carsData.id
+    tempCar = new Car(make, model,year, price,imageURL);
+    this._carAPIService.editCarData(tempCar,carDataID);
+    this.carsData.id;
+    
+    return false;
   }
 
   isShown: boolean = false;

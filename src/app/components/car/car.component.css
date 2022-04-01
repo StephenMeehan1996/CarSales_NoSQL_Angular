@@ -1,31 +1,60 @@
 .editForm{
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 45%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    width: 60%;
     height: 50%;
-    background-color: gray;
+    background-color: #F5F5F5;
     color: aliceblue;
-
+    padding: 1%;
+    border: 2px solid black;
+}
+.closeBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-.editForm{
-    padding: 1.5% 3%;
-    border: 2px solid black;
-    text-align: left;
+.btnDiv{
+    text-align: center;
+}
+
+.carItem{
+   background-color: #F5F5F5;
+   color: #121212;
+   padding: 5%;
+   border: 2px solid 121212;
+   border-radius: 15px;
+   box-shadow: 0 0 20px #30475E;
+   margin-bottom: 4%;
+}
+.btnContain{
+    margin-top: 20px;
+}
+
+.formContain{
+    margin: 0 auto 0 auto;
+    padding: 5% 0;
+    
 }
 .editForm form{
     border: 2px solid black;
     position: relative;
     margin: 0 auto;
-  
+    background-color: #F5F5F5;
+    color: #121212 ;
+    box-shadow: 0 0 20px #F5F5F5;
+    padding: 1%;
+    
 }
-.editForm label{
-    margin: 20px;
+
+.editForm form input{
+    margin: 5% 0 0 0;
+   
 }
-.btnDiv{
-    text-align: center;
+.space{
+    margin-right: 10%;
 }
+

@@ -15,9 +15,6 @@ export class CarlistComponent implements OnInit {
   carsData!: ICar[];
 
 
-
-
-
   constructor(private _carAPIService: CarApiService) { 
  
   }
@@ -27,9 +24,9 @@ export class CarlistComponent implements OnInit {
       {this.carsData = carsData});
   }
 
-  addTheCar(make:string, model:string,year:string,imageURL:string): boolean{
+  addTheCar(make:string, model:string,year:string, price: string,imageURL:string): boolean{
     let tempCar: ICar;
-    tempCar = new Car(make, model,year,imageURL);
+    tempCar = new Car(make, model,year,price,imageURL);
     this._carAPIService.addCar(tempCar);
     return false; // check to see what happens when removed . Refresh? 
   }

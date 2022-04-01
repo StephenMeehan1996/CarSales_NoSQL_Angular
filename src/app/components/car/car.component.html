@@ -1,52 +1,57 @@
-<div class = 'container'>
-    <div class = "row border">
-        <div class = "col-4">
-           <img src="{{carsData.imageURL}}" [style.width.px]="carImageWidth">
-        </div>
-        <div class = "col-3">
-            {{carsData.make}}
-        </div>
-        <div class = "col-3">
-            {{carsData.model}}
-        </div>
-        <div class = "col-3">
-            {{carsData.year}}
+<div class = 'container carItem'>
+    <div class = "row">
+        <div class = "col">
+           <img src="{{carsData.imageURL}}" [style.width.px]="carImageWidth" >
         </div>
 
-     
-        
-        <button (click)="deleteCar(carsData.id)">Delete</button>
-        <button (click) = "toggleShow()" >Edit</button>
+        <div class = "col">
+            <h4> {{carsData.make}}- {{carsData.model}}</h4>
+            <h6>   {{carsData.year}} </h6>
+            <p>{{ '€' +carsData.price }}</p>
+        </div>
+
+        <div class = "row  btnContain justify-content-center">
+            <button (click)="deleteCar(carsData.id)" class = "col-2 btn btn-danger btn-sm" style="margin-right: 1%;">Delete</button>
+            <button (click) = "toggleShow()" class = "col-2 btn btn-success btn-sm" >Edit</button>
+        </div>
+      
     </div>
 </div>
 
 
 <div *ngIf = "isShown" class = "editForm">
     <form class = "col-6">
-        <button (click) = "toggleShow()">&#10005;</button>
-        <div>
-           <label>Make</label>
-           <input type="text" name="make" placeholder="Enter Make" #make>
-      
-           <label>Model</label>
-           <input type="text" name="model" placeholder="Enter Model" #model>
-   
-        </div>
-        <div>
-           <label>Year</label>
-           <input type="text" name="year" placeholder="Enter Year" #year>
-   
-        </div>
-   
-        <label>Image</label>
-        <input type="text" name="imageURL" placeholder="Enter imageURL" #imageURL>
-   
-        <div class="btnDiv">
-           <button type="submit"(click)="editCar(make.value, model.value, year.value, imageURL.value, carsData.id)" (click)="toggleShow()">Edit the Car</button>
-        </div>
-   
+        <div class = "formContain">
+        <button (click) = "toggleShow()" class = "btn btn-danger closeBtn">&#10005;</button>
+         <div class = "row">
+          <div class = "col-4 space">
+             <input type="text" name="make" value="{{carsData.make}}" #make>
+          </div>
+          <div class = "col-4">
+             <input type="text" name="model" value="{{carsData.model}}" #model>
+          </div>
+         </div>
+         <div class = "row">
+          <div class = "col-4 space">
+             <input type="text" name="year" value="{{carsData.year}}" #year>
+          </div>
+          <div class = "col-4">
+             <input type="text" name="price" value="{{carsData.price}}" #price>
+          </div>
+         </div>
+         <div class = "row">
+            <div class = "col-4">
+             <input type="text" name="imageURL" value="{{carsData.imageURL}}" #imageURL>
+            </div>
+         </div>
         
-    </form>
+    
+         <div class="btnDiv" style="margin-top: 10%;">
+            <button type="submit"class = "btn btn-success" (click)="editCar(make.value, model.value, year.value, price.value ,imageURL.value, carsData.id)">Edit the Car</button>
+         </div>
+    
+       </div>
+     </form>
    </div>
 
 

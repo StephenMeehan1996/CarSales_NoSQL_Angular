@@ -1,17 +1,51 @@
 .form{
     padding: 3% 10%;
     border: 2px solid black;
+    border-top: 0;
     text-align: left;
+    background-color: #30475E;
+    position: relative;
+    
 }
 .form form{
     border: 2px solid black;
     position: relative;
     margin: 0 auto;
-  
+    background-color: #F5F5F5;
+    color: #121212 ;
+    box-shadow: 0 0 20px #F5F5F5 ;
 }
-.form label{
-    margin: 20px;
+
+.form form input{
+    margin: 5% 0 0 0;
+   
+}
+.space{
+    margin-right: 10%;
 }
 .btnDiv{
     text-align: center;
+}
+.cardContain{
+    background-color: #F7F7F7;
+    padding: 5%;
+}
+.formContain{
+    position: relative;
+    width: 80%;
+    margin: 0 auto 0 auto;
+    padding: 5% 0;
+}
+footer{ 
+    text-align: center;
+    padding: 3rem;
+    color: #F5F5F5;
+
+
+    /* Height of the footer */
+    background:#6cf;
+}
+nav{
+
+    border-bottom: 2px solid #121212;
 }
